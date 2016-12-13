@@ -17,9 +17,7 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 import org.apache.cordova.CordovaWebView;
-import org.apache.cordova.CordovaInterface;
-import android.util.Log;
- 
+import org.apache.cordova.CordovaInterface; 
 /**
  *
  * @author stfnnvl
@@ -30,12 +28,10 @@ public class PDFSigner extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         // your init code here
-        Log.v(TAG,"Init CoolPlugin");
     }
 
     @Override
     public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
-        Log.v(TAG,"CoolPlugin received:"+ action);
         if (action.equals("createPDFFromImage")) {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
