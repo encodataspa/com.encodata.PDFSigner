@@ -37,14 +37,15 @@ public class PDFSigner extends CordovaPlugin {
                 }
             });
             return true;
+        }else{
+             return false;
         }
-        return false;
     }
 
     public void createPDFFromImage(String inputFile, String imagePath, String outputFile, float x, float y, float width, float height,
             CallbackContext callbackContext) throws IOException {
         if (inputFile == null || imagePath == null || outputFile == null) {
-            callbackContext.error("Expected inputFile and imagePath and outputFile.");
+            callbackContext.error("Expected localFile and remoteFile.");
         } else {
 
             // the document
@@ -71,7 +72,7 @@ public class PDFSigner extends CordovaPlugin {
                 doc.save(outputFile);
             } catch (Exception e) {
 				callbackContext.error(e.toString());
-			} finally {
+            } finally {
                 if (doc != null) {
                     doc.close();
                 }
