@@ -44,7 +44,7 @@ public class PDFSigner extends CordovaPlugin {
     public void createPDFFromImage(String inputFile, String imagePath, String outputFile, float x, float y, float width, float height,
             CallbackContext callbackContext) throws IOException {
         if (inputFile == null || imagePath == null || outputFile == null) {
-            callbackContext.error("Expected localFile and remoteFile.");
+            callbackContext.error("Expected inputFile and imagePath and outputFile.");
         } else {
 
             // the document
@@ -69,7 +69,9 @@ public class PDFSigner extends CordovaPlugin {
                 contentStream.drawImage(pdImage, x, y, width * scale, height * scale);
                 contentStream.close();
                 doc.save(outputFile);
-            } finally {
+            } catch (Exception e) {
+				callbackContext.error(e.toString());
+			} finally {
                 if (doc != null) {
                     doc.close();
                 }
