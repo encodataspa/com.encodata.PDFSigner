@@ -45,19 +45,7 @@ public class PDFSigner extends CordovaPlugin {
                 }
             });
             return true;
-        } else if (action.equals("prova")) {
-            cordova.getThreadPool().execute(new Runnable() {
-                public void run() {
-                    try {
-                        prova(args.getString(0), callbackContext);
-
-                    } catch (Exception e) {
-                        callbackContext.error(e.toString());
-                    }
-                }
-            });
-            return true;
-        } else {
+        }else {
             return false;
         }
     }
@@ -99,9 +87,5 @@ public class PDFSigner extends CordovaPlugin {
                 }
             }
         }
-    }
-    
-    public void prova(String aName){
-        
     }
 }
