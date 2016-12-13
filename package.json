@@ -1,27 +1,26 @@
 {
-  "name": "com.encodata.pdfsigner",
+  "name": "com.encodata.PDFSigner",
   "version": "1.0.0",
   "description": "This cordova plugin is created to sign a PDF file.",
   "cordova": {
-    "id": "com.encodata.pdfsigner",
+    "id": "com.encodata.PDFSigner",
     "platforms": "android"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xfally/cordova-plugin-ftp"
+    "url": "https://github.com/encodataspa/com.encodata.PDFSigner"
   },
   "keywords": [
     "cordova",
-    "ftp",
-    "cordova-android",
-    "cordova-ios"
+    "pdfsigner",
+    "cordova-android"
   ],
   "author": "pax",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/xfally/cordova-plugin-ftp/issues"
+    "url": "https://github.com/encodataspa/com.encodata.PDFSigner/issues"
   },
-  "homepage": "https://github.com/xfally/cordova-plugin-ftp",
+  "homepage": "https://github.com/encodataspa/com.encodata.PDFSigner",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   }
