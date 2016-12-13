@@ -4,7 +4,7 @@ function PDFSigner() {
 }
 
 PDFSigner.prototype.create = function(inputFile, imagePath, outputFile, x, y, width, height, successCallback, errorCallback) {
-    exec(successCallback,
+    cordova.exec(successCallback,
          errorCallback,
          "PDFSigner",
          "createPDFFromImage",
