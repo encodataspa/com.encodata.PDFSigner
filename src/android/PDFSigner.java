@@ -24,7 +24,7 @@ import org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject;
 public class PDFSigner extends CordovaPlugin {
 
     @Override
-    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+    public boolean execute(String action, final JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("createPDFFromImage")) {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
