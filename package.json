@@ -4,9 +4,7 @@
   "description": "This cordova plugin is created to sign a PDF file.",
   "cordova": {
     "id": "com.encodata.pdfsigner",
-    "platforms": [
-      "android",
-     ]
+    "platforms": "android"
   },
   "repository": {
     "type": "git",
