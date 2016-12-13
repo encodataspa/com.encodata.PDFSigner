@@ -71,7 +71,7 @@ public class PDFSigner extends CordovaPlugin {
                 contentStream.drawImage(pdImage, Float.parseFloat(x), Float.parseFloat(y), Float.parseFloat(width) * scale, Float.parseFloat(height)* scale);
                 contentStream.close();
                 doc.save(outputFile);
-                callbackContext.success("File Saved Correctly");
+                callbackContext.success(outputFile);
             } catch (Exception e) {
                 callbackContext.error(e.toString());
             } finally {
