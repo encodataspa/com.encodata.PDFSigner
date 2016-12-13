@@ -33,7 +33,8 @@ public class PDFSigner extends CordovaPlugin {
     @Override
     public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
         if (action.equals("createPDFFromImage")) {
-            cordova.getThreadPool().execute(new Runnable() {
+            //cordova.getThreadPool().execute(new Runnable() {
+            cordova.getActivity().runOnUiThread(new Runnable() {
                 public void run() {
                     try {
                         createPDFFromImage(args.getString(0), args.getString(1), args.getString(2), args.getString(3),
