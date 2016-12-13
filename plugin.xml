@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.encodata.pdfSigner"
+    version="1.0.0">
+    <name>PDFSigner</name>
+    <description>A PDFSigner</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,PDFSigner</keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/PDFSigner.js" name="PDFSigner">
+        <clobbers target="PDFSigner" />
+    </js-module>
+
+ <!-- android -->
+    <platform name="android">
+             <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="PDFSigner" >
+                <param name="android-package" value="PDFSigner"/>
+            </feature>
+        </config-file>
+
+        <!-- cordova plugin src files -->
+		<source-file src="src/android/PDFSigner.java" target-dir="src/" />
+        <source-file src="libs/pdfbox-app-2.0.3.jar" target-dir="libs/" />
+     </platform>
+</plugin>
