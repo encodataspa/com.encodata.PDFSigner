@@ -4,7 +4,7 @@ function PDFSigner() {
  console.log("PDFSigner.js: is created");
 }
 
-PDFSigner.prototype.createPDFFromImage = function(inputFile, imagePath, outputFile, x, y, width, height, successCallback, errorCallback) {
+PDFSigner.prototype.create = function(inputFile, imagePath, outputFile, x, y, width, height, successCallback, errorCallback) {
     exec(successCallback,
          errorCallback,
          "PDFSigner",
