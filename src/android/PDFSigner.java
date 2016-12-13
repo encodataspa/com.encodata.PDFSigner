@@ -29,8 +29,8 @@ public class PDFSigner extends CordovaPlugin {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
                     try {
-                        createPDFFromImage(args.getString(0), args.getString(1), args.getString(2), args.getDouble(3),
-                                args.getDouble(4), args.getDouble(5), args.getDouble(6), callbackContext);
+                        createPDFFromImage(args.getString(0), args.getString(1), args.getString(2),  (float)args.getDouble(3),
+                                 (float)args.getDouble(4),  (float)args.getDouble(5),  (float)args.getDouble(6), callbackContext);
                     } catch (Exception e) {
                         callbackContext.error(e.toString());
                     }
