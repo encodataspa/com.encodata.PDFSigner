@@ -29,8 +29,8 @@ public class PDFSigner extends CordovaPlugin {
             cordova.getThreadPool().execute(new Runnable() {
                 public void run() {
                     try {
-                        createPDFFromImage(args.getString(0), args.getString(1), args.getString(2),  (float)args.getDouble(3),
-                                 (float)args.getDouble(4),  (float)args.getDouble(5),  (float)args.getDouble(6), callbackContext);
+                        createPDFFromImage(args.getString(0), args.getString(1), args.getString(2),   args.getString(3),
+                                  args.getString(4), args.getString(5), args.getString(6), callbackContext);
                     } catch (Exception e) {
                         callbackContext.error(e.toString());
                     }
@@ -42,7 +42,7 @@ public class PDFSigner extends CordovaPlugin {
         }
     }
 
-    public void createPDFFromImage(String inputFile, String imagePath, String outputFile, float x, float y, float width, float height,
+    public void createPDFFromImage(String inputFile, String imagePath, String outputFile, String x, String y, String width, String height,
             CallbackContext callbackContext) throws IOException {
         if (inputFile == null || imagePath == null || outputFile == null) {
             callbackContext.error("Expected localFile and remoteFile.");
@@ -67,7 +67,7 @@ public class PDFSigner extends CordovaPlugin {
                 // better method inspired by http://stackoverflow.com/a/22318681/535646
                 // reduce this value if the image is too large
                 float scale = 1f;
-                contentStream.drawImage(pdImage, x, y, width * scale, height * scale);
+                contentStream.drawImage(pdImage, Float.parseFloat(x), Float.parseFloat(y), Float.parseFloat(width) * scale, Float.parseFloat(height)* scale);
                 contentStream.close();
                 doc.save(outputFile);
             } catch (Exception e) {
